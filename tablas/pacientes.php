@@ -1,7 +1,7 @@
 <table class="table table-hover table-condensed" id="dataTable" width="100%" cellspacing="0">
   <thead>
 	<tr>
-	  <th>N°</th>
+	  <th>N° Historia</th>
 	  <th>DNI</th>
 	  <th>Apellido y Nombre</th>
 	  <th>Telefono</th>
