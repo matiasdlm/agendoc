@@ -1,5 +1,7 @@
 <?php
-	$cnn=mysqli_connect("localhost","root","","bd_consultorio");
+	include_once 'lib/conexion.php';
+	$cnn = conectar();
+	
 	$detalle = $_POST['detalle'];
 	// $xid=$_GET['xid'];
 	

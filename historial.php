@@ -39,7 +39,9 @@
                   </thead>
                   <tbody> 
 				  <?php 
-					$cnn=mysqli_connect("localhost","root","","bd_consultorio");
+					include_once 'lib/conexion.php';
+					$cnn = conectar();
+					
 					$sql="select * from tbl_pacientes;";
 					$resultado=mysqli_query($cnn,$sql);
 					?>

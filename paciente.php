@@ -30,7 +30,9 @@
                   <tbody> 
 				  <?php 
 					//$xid=$_GET['xid'];
-					$cnn=mysqli_connect("localhost","root","","bd_consultorio");
+					include_once 'lib/conexion.php';
+					$cnn = conectar();
+					
 					$sql="SELECT atenciones.id_paciente, atenciones.detalle, atenciones.fecha, pacientes.nombre as Nom_Paciente,
 								pacientes.apellido as Ape_Paciente, usuarios.nombre as Nom_Especialista, usuarios.apellido as Ape_Especialista
 							FROM tbl_atenciones as atenciones 
