@@ -9,7 +9,8 @@
 <!-- DataTable-->
 <link href="lib/dataTable/bootstrap.css" rel="stylesheet">
 <link href="lib/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+<!-- Font Awesome-->
+<link href="lib/fontawesome/css/font-awesome.css" rel="stylesheet">
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>

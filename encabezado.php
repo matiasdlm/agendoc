@@ -81,7 +81,7 @@
 			<span>Pacientes</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="nada.html">Listado</a>
+            <a class="dropdown-item" href="listaPacientes.php">Listado</a>
             <a class="dropdown-item" href="historial.php">Historial Med.</a>
           </div>
         </li>
