@@ -1,12 +1,20 @@
 <table class="table table-hover table-condensed" id="dataTable" width="100%" cellspacing="0">
   <thead>
-	<tr>
+	<tr style="background-color: #088A08; color:white; font-weight:bold;">
 	  <th>N° Historia</th>
 	  <th>DNI</th>
 	  <th>Apellido y Nombre</th>
 	  <th>Telefono</th>
 	</tr>
   </thead>
+  <tfoot>
+  	<tr style="background-color: #A4A4A4; color:white; font-weight:bold;">
+	  <td>N° Historia</td>
+	  <td>DNI</td>
+	  <td>Apellido y Nombre</td>
+	  <td>Telefono</td>
+	</tr>
+  </tfoot>
   <tbody> 
   <?php 
 	include_once 'lib/conexion.php';
@@ -31,3 +39,9 @@
 	<?php } ?>
   </tbody>
 </table>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#dataTable').DataTable();
+	} );
+</script>
