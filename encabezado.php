@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html">
+		<a class="navbar-brand mr-1" href="index.php">
 			<img src="img/tec.png"> AgenDoc 
 		</a>
 
@@ -60,7 +60,7 @@
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Inicio</span>
           </a>

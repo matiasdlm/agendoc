@@ -1,6 +1,6 @@
 <table class="table table-hover table-condensed" id="dataTable" width="100%" cellspacing="0">
   <thead>
-	<tr style="background-color: #088A08; color:white; font-weight:bold;">
+	<tr style="background-color: #5858FA; color:white; font-weight:bold;">
 	  <th>N° Historia</th>
 	  <th>DNI</th>
 	  <th>Apellido y Nombre</th>

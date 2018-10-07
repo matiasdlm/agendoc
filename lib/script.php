@@ -5,11 +5,11 @@
 <!-- Page level plugin CSS-->
 <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 <!-- Custom styles for this template-->
-<link href="css/sb-admin.css" rel="stylesheet">
+ <link href="css/sb-admin.css" rel="stylesheet">
 <!-- DataTable-->
 <link href="lib/dataTable/bootstrap.css" rel="stylesheet">
 <link href="lib/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet">
-<!-- Font Awesome-->
+<!-- Font Awesome -->
 <link href="lib/fontawesome/css/font-awesome.css" rel="stylesheet">
 
 <!-- Bootstrap core JavaScript-->

@@ -3,15 +3,13 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
+		
+		  <ol class="breadcrumb">
+            <li class="breadcrumb-item active">BUSCAR HISTORIA CLINICA</li>
+          </ol>
 
-          <!-- DataTables Example -->
-          <div class="card mb-3">
-            <div class="card text-left">
-			  <div class="card-header">
-				<h5 class="card-title">LISTADO DE PACIENTES</h5>
-			  </div>
-			</div>
-			
+          <!-- DataTable -->
+          <div class="card mb-3">			
             <div class="card-body">
               <div class="table-responsive">
 				<?php include_once "tablas/tbl_pacientes.php" ?>

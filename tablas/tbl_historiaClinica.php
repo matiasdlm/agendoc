@@ -3,7 +3,7 @@
 	<tr>
 	  <th colspan=3; style="text-align:right"><?php $xid=$_GET['xid']; echo "<a href='altaHistoria.php?xid=$xid&xnom=$xnom'>Agregar Historia</a>"?></th>
 	</tr>
-	<tr style="background-color: #088A08; color:white; font-weight:bold;">
+	<tr style="background-color: #5858FA; color:white; font-weight:bold;">
 	  <th>Fecha</th>
 	  <th>Especialista</th>
 	  <th>Comentarios</th>

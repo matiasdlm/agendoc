@@ -8,12 +8,11 @@
             <li class="breadcrumb-item active">HISTORIAL MEDICO</li>
           </ol>
 
-
           <!-- DataTables Example -->
           <div class="card mb-3">
-            <div class="card-header">
-				<text style="font-weight:bold;"><?php $xnom=$_GET['xnom']; echo $xnom ?></text>
-			</div>
+            <!-- <div class="card-header"> -->
+				Paciente <text style="font-weight:bold;"><?php $xnom=$_GET['xnom']; echo $xnom ?></text>
+			<!-- </div> -->
             <div class="card-body">
               <div class="table-responsive">
                 <?php include_once "tablas/tbl_historiaClinica.php" ?>

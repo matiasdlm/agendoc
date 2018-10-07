@@ -1,6 +1,6 @@
 <table class="table table-hover table-condensed" id="dataTable" width="100%" cellspacing="0">
   <thead>
-	<tr style="background-color: #088A08; color:white; font-weight:bold;">
+	<tr style="background-color: #5858FA; color:white; font-weight:bold;">
 	  <th>DNI</th>
 	  <th>Apellido y Nombre</th>
 	  <th>Telefono</th>
@@ -38,15 +38,15 @@
 	  <td><?php echo $x_nom?></td>
 	  <td><?php echo $x_telefono ?></td>
 	  <td style="text-align:center;">
-		<span class="btn btn-warning btn-xs">
-			<span class="fa fa-pencil-square-o"></span>
+		<span class="btn btn-warning btn-xs" style="font-size:10px;">
+			<span class="fa fa-pencil-square-o" style="font-size:16px;" ></span>
 		  </span>
 		</td>
 	  <td style="text-align:center;"> 
-		<span class="btn btn-danger btn-xs">
-			<span class="fa fa-trash"></span>
+		<span class="btn btn-danger btn-xs" style="font-size:10px;">
+			<span class="fa fa-trash" style="font-size:16px;"></span>
 		  </span>
-		<td>
+		</td>
 	</tr>
 	<?php } ?>
   </tbody>
