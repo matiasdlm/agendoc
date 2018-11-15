@@ -14,8 +14,8 @@
 		  <!-- DataTable -->
 		   <div class="card mb-3">
             <div class="card-body">
-              <div class="table-responsive">
-				<?php include_once "tbl_editarPacientes.php" ?>
+              <div id="tablaDataTable" class="table-responsive">
+				
               </div>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
@@ -38,7 +38,7 @@
 				success:function(r){
 					if(r==1){
 						$('#frmNuevoPaciente')[0].reset();
-						$('#dataTable').load('tbl_editarPacientes.php');
+						$('#tablaDataTable').load('tbl_editarPacientes.php');
 						alertify.success("Paciente agregado!");
 					}else{
 						alertify.error("Fallo al agregar paciente");
@@ -49,10 +49,29 @@
 	});
 </script>
 
+
+
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#dataTable').load('tbl_editarPacientes.php');
+		$('#tablaDataTable').load('tbl_editarPacientes.php');
 	} );
 </script>
 
+
+<script type="text/javascript">
+	function agregarFrmEditar(id_paciente){
+		$.ajax ({
+			type:"POST"
+			data:"id_paciente" + id_paciente,
+			url: "funciones/obtenerDatos.php"
+			success:function(r){
+					datos=jQuery.parseJSON(r);
+					$('#id_paciente').val(datos['id_paciente']);
+					$('#nombre_editar').val(datos['nombre']);
+					$('#apellido_editar').val(datos['apellido']);
+					$('#telefono').val(datos['telefono']);
+					$('#dni').val(datos['dni']);
+			}
+		});
+	}
 <?php include_once "pie.php"?>
