@@ -26,6 +26,17 @@
 	
 	<?php while($paciente=mysqli_fetch_object($resultado)){
 		$x_ID=$paciente->ID_paciente;
+		switch (strlen($x_ID)) {
+			case 1:
+				$x_ID="000".$x_ID;
+				break;
+			case 2:
+				$x_ID="00".$x_ID;
+				break;
+			case 3:
+				$x_ID="0".$x_ID;
+				break;
+		}
 		$x_dni=$paciente->dni;
 		$x_nom=$paciente->apellido ." ". $paciente->nombre;
 		$x_telefono=$paciente->telefono;

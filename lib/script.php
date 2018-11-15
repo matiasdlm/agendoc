@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+
 <!-- Bootstrap core CSS-->
 <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Custom fonts for this template-->
