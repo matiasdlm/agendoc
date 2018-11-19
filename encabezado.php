@@ -65,11 +65,7 @@
             <span>Inicio</span>
           </a>
         </li>
-		<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Turnos</span>
-          </a>
+
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="nada.html">Reservar</a>
             <a class="dropdown-item" href="nada.html">Reprogramar</a>
@@ -85,9 +81,5 @@
             <a class="dropdown-item" href="historial.php">Historial Med.</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-linkMed" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Agenda Medica</span></a>
-        </li>
+
       </ul>
