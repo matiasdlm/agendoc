@@ -13,7 +13,7 @@
           <!-- DataTables Example -->
           <div class="card mb-3">
 			<div class="card-header">
-				Nueva historia de paciente <text style="font-weight:bold;"><?php $xnom=$_GET['xnom']; echo $xnom ?></text>
+				Nueva historia <text style="font-weight:bold;"></text>
 			</div>
 		  </div>
             <div class="card-body">
@@ -27,6 +27,14 @@
 						<?php } ?>
 					  	<form action="guardarHistoria.php" method="POST">
 						<!-- <?php // $xid=$_GET['xid']?> -->
+            <label for="fecha">Fecha: <?php echo date("j/n/Y") ?> </label></br>
+            <label for="obra_social"> Obra Social: </label>
+            <select id="obra_social" name="obra_social" >
+               <option value="0">Seleccione...</option>
+               <option value="1">Galeno</option>
+               <option value="2">Medife</option>
+               <option value="3">OSDE</option>
+            </select></br>
 						<label for="detalle">Detalle:  </label></br>
 						<!-- <textarea id="detalle" name="detalle" style="WIDTH: 400px; HEIGHT: 98px;text-align:top" </textarea> -->
 						<textarea name="detalle" rows="5" cols="55"></textarea>

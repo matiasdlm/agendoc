@@ -11,7 +11,7 @@
 	$resultado = mysqli_query($cnn, $sql);
 	$mensaje = '';
 	if($resultado){
-		$mensaje = 'Sus datos se han guardado correctamente';
+		$mensaje = '<b>Sus datos se han guardado correctamente</b>';
 	}
 	else{
 		$error = mysqli_error($cnn);
