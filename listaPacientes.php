@@ -50,7 +50,6 @@
 </script>
 
 
-
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#tablaDataTable').load('tbl_editarPacientes.php');
@@ -61,17 +60,18 @@
 <script type="text/javascript">
 	function agregarFrmEditar(id_paciente){
 		$.ajax ({
-			type:"POST"
-			data:"id_paciente" + id_paciente,
-			url: "funciones/obtenerDatos.php"
+			type:"POST",
+			data:"id_paciente=" + id_paciente,
+			url: "funciones/obtenerDatos.php",
 			success:function(r){
 					datos=jQuery.parseJSON(r);
 					$('#id_paciente').val(datos['id_paciente']);
 					$('#nombre_editar').val(datos['nombre']);
 					$('#apellido_editar').val(datos['apellido']);
-					$('#telefono').val(datos['telefono']);
-					$('#dni').val(datos['dni']);
+					$('#telefono_editar').val(datos['telefono']);
+					$('#dni_editar').val(datos['dni']);
 			}
 		});
 	}
+</script>
 <?php include_once "pie.php"?>

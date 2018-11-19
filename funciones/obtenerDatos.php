@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once "../lib/conexion.php"
 	require_once "../lib/crud.php"
 

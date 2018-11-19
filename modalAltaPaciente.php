@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="frmNuevoPaciente" action="pacientes_guardar.php" method="post" >
+        <form id="frmNuevoPaciente" >
     			<label>Nombre</label>
     			<input type="text" class="form-control input-sm" id="nombre" name="nombre">
     			<label>Apellido</label>
@@ -40,8 +40,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="frmNuevoPaciente" action="pacientes_guardar.php" method="post" >
-          <input type="text" hidden="" id="id_paciente" name="">
+        <form id="frmNuevoPaciente_editar" >
+          <input type="text" hidden="" id="id_paciente" name="id_paciente">
           <label>Nombre</label>
           <input type="text" class="form-control input-sm" id="nombre" name="nombre_editar">
           <label>Apellido</label>
@@ -54,7 +54,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button id="btnAgregar" type="submit" class="btn btn-primary">Actualizar</button>
+        <button id="btnActualizar" type="submit" class="btn btn-warning">Actualizar</button>
       </div>
     </div>
   </div>

@@ -18,9 +18,9 @@
 			
 			$sql="SELECT * from tbl_pacientes
 					WHERE id_paciente='$id_paciente'";
-			result = mysqli_query($cnn,$sql);	
+			$result = mysqli_query($cnn,$sql);
 
-			$ver=mysqli_fetch_row($result)	;
+			$ver=mysqli_fetch_row($result);
 
 			$datos= array(
 				'id_paciente' =>$ver[0],
@@ -31,5 +31,20 @@
 				)	;
 			return $datos;
 		}
+
+
+		public function actualizar($datos){
+			$cnn=conectar();
+			
+			$sql="UPDATE tbl_pacientes SET 
+						nombre='$datos[0]',
+						apellido='$datos[1]',
+						dni='$datos[2]',
+						telefono='$datos[3]' 
+					WHERE id_paciente='$datos[4]'";
+
+			return mysqi_query($cnn,$sql);
+		}
+		
 	}
 ?>
