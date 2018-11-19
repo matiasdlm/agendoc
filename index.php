@@ -4,7 +4,7 @@
 
         <div class="container-fluid">
 
-    
+    <?php require_once 'usuarios_form.php' ?>
 
         </div>
         <!-- /.container-fluid -->
