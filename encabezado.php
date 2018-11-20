@@ -65,27 +65,15 @@
             <span>Inicio</span>
           </a>
         </li>
-<<<<<<< HEAD
-=======
 
-          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="nada.html">Reservar</a>
-            <a class="dropdown-item" href="nada.html">Reprogramar</a>
-          </div>
-        </li>
->>>>>>> dd150818b31d80832a422c09e69f74b807f7c565
-		<li class="nav-item dropdown">
+    		<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
-			<span>Pacientes</span>
+    			   <span>Pacientes</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="listaPacientes.php">Listado</a>
             <a class="dropdown-item" href="historial.php">Historial Med.</a>
           </div>
         </li>
-<<<<<<< HEAD
-=======
-
->>>>>>> dd150818b31d80832a422c09e69f74b807f7c565
       </ul>
