@@ -23,7 +23,7 @@
 
 			if ($rol>1){
 				//login de especialista
-				require_once 'inicio_especialista.php';
+				require_once 'listaPacientes2.php';
 			}else{
 				//login secretaria
 				require_once 'inicio_secretaria.php';
