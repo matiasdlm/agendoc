@@ -6,16 +6,21 @@
 			<hr/> <?php echo $mensaje?> <hr/>
 		<?php } ?>
 	<?php } ?>
+	<br/>
 	<form action="index.php" method="post">
 		<label for="usuario">Usuario:</label> 
-		<input type="text" id="usuario" name="usuario"/>
+		<input type="text" id="usuario" name="usuario"/><br/><br/>
 		<label for="password">Contraseña:</label>
 		<input type="password" id="password" name="password"/>
 		<br/><br/>
 		<input type="submit" value="Ingresar"/>
 	</form>
 	</center>
+
+
 	<center>
+		<br/><br/><br/><br/>
+		¿Todavia no estas registrado?   
 		<a href="registro.php"><input type="submit" value="Registrarse"></a>
 	</center>
 
