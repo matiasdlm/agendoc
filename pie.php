@@ -1,3 +1,10 @@
+ 	</div>
+	<div class="pie">
+		<?php if(isset($_SESSION['usuario'])){ ?>
+			[Usuario: <b><?php echo $_SESSION['usuario']?></b>]
+			<a href="index.php">Salir</a>
+		<?php } ?>
+	</div>
  <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">
@@ -6,18 +13,9 @@
             </div>
           </div>
         </footer>
-
-      </div>
-      <!-- /.content-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
-    </a>
-
+	</a>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -31,7 +29,7 @@
           <div class="modal-body">Seleccione "SALIR" aquí debajo para terminar su sesión.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Salir</a>
+            <a class="btn btn-primary" href="index.php">Salir</a>
           </div>
         </div>
       </div>
