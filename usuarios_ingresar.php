@@ -1,6 +1,6 @@
 <div class="contenido">
 	<center>
-	<h3>Ingrese su usuario y contraseña</h3>
+	<h4>Ingrese usuario y contraseña</h4>
 	<?php if(isset($mensaje)){ ?>
 		<?php if($mensaje!=''){ ?>
 			<hr/> <?php echo $mensaje?> <hr/>
@@ -16,9 +16,7 @@
 	</form>
 	</center>
 	<center>
-		<div style="width:110px; background-color:#00BFFF">
-			<a href="registro.php">--> Registrarse</a>
-		</div>
+		<a href="registro.php"><input type="submit" value="Registrarse"></a>
 	</center>
 
 

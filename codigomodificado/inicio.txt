@@ -25,3 +25,5 @@
 	<br/><br/><br/><br/>
 
 </div>
+
+<a href="registro.php"><input type="submit" value="Registrarse"></a>
