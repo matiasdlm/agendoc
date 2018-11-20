@@ -2,9 +2,9 @@
       <div id="content-wrapper">
         <div class="container-fluid">
 			<ol class="breadcrumb">
-            <li class="breadcrumb-item active">ACREDITARSE / LOGIN</li>
+            <li class="breadcrumb-item active">LOGIN</li>
           </ol>
         </div>
         <!-- /.container-fluid -->
-   <?php require_once 'usuarios_form.php' ?>
+   <?php require_once 'usuarios_ingresar.php' ?>
 <?php include_once "pie.php"?>
