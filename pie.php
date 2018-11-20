@@ -1,15 +1,15 @@
  	</div>
-	<div class="pie">
-		<?php if(isset($_SESSION['usuario'])){ ?>
-			[Usuario: <b><?php echo $_SESSION['usuario']?></b>]
-			<a href="index.php">Salir</a>
-		<?php } ?>
-	</div>
  <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Powered by FANTASTIC SOFT / 2018</span>
+              <div style="text-align: center;" class="pie">
+                <?php if(isset($_SESSION['usuario'])){ ?>
+                  [Usuario: <b><?php echo $_SESSION['usuario']?></b>]
+                  <a href="index.php">Salir</a>
+                <?php } ?>
+              </div>
+            <div class="copyright text-center my-auto"></br>
+              <span>Desarrollado por Fantastic SOFT - 2018</span>
             </div>
           </div>
         </footer>
