@@ -2,16 +2,17 @@
 	<hr/> <?php echo $mensaje?> <hr/>
 <?php } ?>
 <div class="contenido">
+<li class="breadcrumb-item active"></li>
 	<center>
 	<form action="usuarios_guardar.php" method="post">
-		<label for="usuario">Nombre:</label>
-		<input type="text" id="nombre" name="usuario"/>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre"/>
 		<br/>
-		<label for="usuario">Apellido:</label>
-		<input type="text" id="apellido" name="usuario"/>
+		<label for="apellido">Apellido:</label>
+		<input type="text" id="apellido" name="apellido"/>
 		<br/>
-		<label for="Rol"> Rol: </label>
-		<select id="rol" name="rol" >
+		<label for="id_rol"> Rol: </label>
+		<select id="id_rol" name="id_rol" >
 		   <option value="1">Secretaria</option>
 		   <option value="2">Especialista</option>
 		</select>
