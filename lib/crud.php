@@ -33,9 +33,28 @@
 		}
 
 
+		public function obtenerNombre($id_paciente){
+			$cnn=conectar();
+			
+			$sql="SELECT id_paciente, nombre, apellido from tbl_pacientes
+					WHERE id_paciente='$id_paciente'";
+			$result = mysqli_query($cnn,$sql);
+
+			$ver=mysqli_fetch_row($result);
+
+			$datos= array(
+				'id_paciente' =>$ver[0],
+				'nombre' =>$ver[1],
+				'apellido' =>$ver[2],
+				)	;
+			return $datos;
+		}
+
+
 		public function actualizar($datos){
 			$cnn=conectar();
 			
+			print_r($datos);
 			$sql="UPDATE tbl_pacientes SET 
 						nombre='$datos[0]',
 						apellido='$datos[1]',
@@ -43,7 +62,18 @@
 						telefono='$datos[3]' 
 					WHERE id_paciente='$datos[4]'";
 
-			return mysqi_query($cnn,$sql);
+			return mysqli_query($cnn,$sql);
+		}
+
+
+		public function borrarPaciente($datos){
+			$cnn=conectar();
+			
+			print_r($datos);
+			$sql="DELETE FROM tbl_pacientes WHERE  
+					WHERE id_paciente='$datos[4]'";
+
+			return mysqli_query($cnn,$sql);
 		}
 		
 	}

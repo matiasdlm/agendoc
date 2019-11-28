@@ -1,4 +1,11 @@
-<?php include_once "encabezado.php" ?>
+<?php include_once "encabezado.php"; 
+
+    if(!isset($_SESSION['usuario'])){
+        require_once 'usuarios_autorizar.php'; 
+    }
+
+       ?>
+
 
       <div id="content-wrapper">
 

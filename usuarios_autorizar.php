@@ -1,8 +1,6 @@
 <?php
 	require_once 'lib/conexion.php';
-
 	
-	if(!isset($_SESSION['usuario'])){
 		$autorizado = false;
 		$usuario = '';
 		$password = '';
@@ -36,5 +34,4 @@
 			require_once("login.php");
 			exit;
 		}
-	}
 ?>
