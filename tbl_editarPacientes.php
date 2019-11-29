@@ -33,25 +33,28 @@
 	?>
 	<tr>
 	  <td><?php echo $x_dni ?></td>
-	  <td><?php echo $x_nom?></td>
+	  <td><?php echo $x_nom ?></td>
 	  <td><?php echo $x_telefono ?></td>
 	  <td style="text-align:center;">
 		<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregarFrmEditar('<?php echo $x_ID ?>')" style="font-size:10px;">
 			<span class="fa fa-pencil-square-o" style="font-size:16px;" ></span>
 		  </span>
 		</td>
-	  <td style="text-align:center;"> 
-		<span class="btn btn-danger btn-xs" style="font-size:10px;">
+	  <td style="text-align:center;">
+		 <span name="btn_borrar" id="btn_borrar" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalBorrar" onclick="eliminarPaciente('<?php echo $x_ID ?>')" style="font-size:10px;">
 			<span class="fa fa-trash" style="font-size:16px;"></span>
-		  </span>
+		  </span> 		  
 		</td>
 	</tr>
 	<?php } ?>
   </tbody>
 </table>
 
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#dataTable').DataTable();
 	} );
 </script>
+
+

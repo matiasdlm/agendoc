@@ -1,5 +1,11 @@
 <?php include_once "encabezado.php" ?>
 
+<?php if(!isset($_SESSION['usuario'])){
+	 require_once 'usuarios_autorizar.php'; 
+
+
+	} ?>
+ 
       <div id="content-wrapper">
         <div class="container-fluid"> <!-- contenedor que me separa el contenido del menu -->
 		  <ol class="breadcrumb">
@@ -18,14 +24,19 @@
 				
               </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">Updated <?php echo date('Y/m/d H:i'); ?></div>
           </div>
 
         </div>
+      </div>
         <!-- /.container-fluid -->
 
 <?php include_once "modalAltaPaciente.php"?>
 
+
+
+
+<!-- Submit AGREGAR paciente -->
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#btnAgregar').click(function(){
@@ -37,11 +48,15 @@
 				url:"agregarPaciente.php",
 				success:function(r){
 					if(r==1){
+						alert(r);
+						alert("1");
 						$('#frmNuevoPaciente')[0].reset();
-						$('#tablaDataTable').load('tbl_editarPacientes.php');
-						alertify.success("Paciente agregado!");
+						$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						alert("Paciente agregado!");
 					}else{
-						alertify.error("Fallo al agregar paciente");
+												alert(r);
+						alert("2");
+						alert("Fallo al agregar paciente");
 					}
 				}
 			});
@@ -50,6 +65,62 @@
 </script>
 
 
+<!-- Submit MODIFICAR paciente -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $("#frmNuevoPaciente_editar").on('submit', function(evt){
+		 	evt.preventDefault();
+			datos=$('#frmNuevoPaciente_editar').serialize();
+			
+			$.ajax({
+				type:"POST",
+				data:datos,
+				url:"agregarPaciente.php",
+				success:function(r){
+					if(r!=1){
+						$('#frmNuevoPaciente_editar')[0].reset();
+						$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						alert("Paciente agregado!");
+					}else{
+						alert("Fallo al modificar paciente");
+					}
+				}
+			});
+		});
+	});
+</script>
+
+
+<!-- Submit BORRAR paciente -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $("#frmNuevoPaciente_borrar").on('submit', function(evt){
+		 	evt.preventDefault();
+			datos=$('#frmNuevoPaciente_borrar').serialize();
+			$.ajax({
+				type:"POST",
+				data:datos,
+				url:"agregarPaciente.php",
+				success:function(r){
+					if(r!=1){
+						$('#frmNuevoPaciente_borrar')[0].reset();
+						$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						alert("Paciente eliminado");
+					}else{
+						alert("Fallo al eliminar paciente");
+					}
+				}
+			});
+		$('#frmNuevoPaciente_borrar').modal('hide');
+		$('#tablaDataTable').reload('tbl_editarPacientes.php');
+		});
+	});
+</script>
+
+
+
+
+<!-- carga la lista de Pacientes -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#tablaDataTable').load('tbl_editarPacientes.php');
@@ -57,6 +128,8 @@
 </script>
 
 
+<!-- busca los datos de los pacientes por el ID
+	y carga los datos en el modal de modificar -->
 <script type="text/javascript">
 	function agregarFrmEditar(id_paciente){
 		$.ajax ({
@@ -65,7 +138,7 @@
 			url: "funciones/obtenerDatos.php",
 			success:function(r){
 					datos=jQuery.parseJSON(r);
-					$('#id_paciente').val(datos['id_paciente']);
+					$('#id_paciente_editar').val(datos['id_paciente']);
 					$('#nombre_editar').val(datos['nombre']);
 					$('#apellido_editar').val(datos['apellido']);
 					$('#telefono_editar').val(datos['telefono']);
@@ -74,4 +147,22 @@
 		});
 	}
 </script>
-<?php include_once "pie.php"?>
+
+<script type="text/javascript">
+	function eliminarPaciente(id_paciente){
+		$.ajax ({
+			type:"POST",
+			data:"id_paciente=" + id_paciente,
+			url: "funciones/obtenerNombre.php",
+			success:function(r){
+					datos=jQuery.parseJSON(r);
+					$('#id_paciente_borrar').val(datos['id_paciente']);
+					$('#nombre_borrar').val(datos['nombre']);
+					$('#apellido_borrar').val(datos['apellido']);
+					$('#hola').val($('#nombre_borrar').val())
+			}
+		});
+	}
+</script>
+
+<?php include_once "pie.php"?> 

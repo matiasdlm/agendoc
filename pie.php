@@ -5,7 +5,12 @@
               <div style="text-align: center;" class="pie">
                 <?php if(isset($_SESSION['usuario'])){ ?>
                   [Usuario: <b><?php echo $_SESSION['usuario']?></b>]
-                  <a href="index.php">Salir</a>
+
+                  <button type="button" data-toggle="modal" data-target="#logoutModal">  Salir </button>
+                   <!-- <a href="logout.php" data-toggle="modal" data-target="#logoutModal" >Salir</a> 
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#logoutModal">
+                    Salir
+                </button>--> 
                 <?php } ?>
               </div>
             <div class="copyright text-center my-auto"></br>
@@ -29,7 +34,7 @@
           <div class="modal-body">Seleccione "SALIR" aquí debajo para terminar su sesión.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="index.php">Salir</a>
+            <a class="btn btn-primary" href="logout.php">Salir</a>
           </div>
         </div>
       </div>

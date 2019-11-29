@@ -1,16 +1,19 @@
-<?php include_once "encabezado.php"?>
-        <!-- /.container-fluid -->
-        <div id="content-wrapper">
-		<div class="container-fluid">
-			<ol class="breadcrumb">
-		    <li class="breadcrumb-item active">BIENVENIDO</li>
-		  </ol>
-		</div>
-   		<?php require_once 'usuarios_autorizar.php' ?>
+<?php 
+	require_once 'lib/conexion.php';
+	include_once "encabezado.php";
 
-   		<?php 
 
-	   		$us = $_SESSION['usuario'];
+        //<!-- /.container-fluid -->
+        //<!-- <div id="content-wrapper">
+		//<div class="container-fluid">
+		//	<ol class="breadcrumb">
+		//    <li class="breadcrumb-item active">BIENVENIDO</li>
+		//  </ol>
+		// </div> -->
+	
+	 if(isset($_SESSION['usuario'])){
+
+			$us = $_SESSION['usuario'];
 
 	   		$conexion = conectar();
 			$sql = "SELECT id_rol
@@ -23,10 +26,19 @@
 
 			if ($rol>1){
 				//login de especialista
-				require_once 'listaPacientes2.php';
+				echo "especialista";
+				// require_once 'listaPacientes2.php';
 			}else{
 				//login secretaria
-				require_once 'inicio_secretaria.php';
+				echo "secretaria";
+				//require_once 'inicio_secretaria.php';
 			}
-		?>
-<?php include_once "pie.php"?>
+		}else { 
+   			require_once 'usuarios_autorizar.php';
+   			} 
+
+
+   		
+	// include_once "pie.php";
+
+?>

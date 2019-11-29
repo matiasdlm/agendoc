@@ -1,3 +1,11 @@
+<div id="content-wrapper">
+	<div class="container-fluid">
+		<ol class="breadcrumb">
+	    <li class="breadcrumb-item active">BIENVENIDO</li>
+	  </ol>
+	</div>
+   		
+<center>
 <div class="contenido">
 	<center>
 	<h4>Ingrese usuario y contraseña</h4>
@@ -28,3 +36,4 @@
 	<br/><br/><br/><br/>
 
 </div>
+<center>
