@@ -6,10 +6,8 @@
 	
 	if ( $_POST)
 	{
-		if ( isset($_POST['id_paciente_editar'])) //si tiene ID entrar por form de MODIFICAR o BORRAR
+		if ( isset($_POST['id_paciente_editar'])) //entra por el form MODIFICAR
 		{	
-			if ( isset($_POST['dni_editar'])) 
-			{	
 				//entra por MODIFICAR
 				$datos=array(
 					$_POST['nombre_editar'],
@@ -21,18 +19,18 @@
 			
 			echo $obj->actualizar($datos);
 
-			}
-			else{
+			} 
+
+		elseif(isset($_POST['id_paciente_borrar'])) //entra por el form de BORRAR
+		{
 				//entra por BORRAR
 				$datos=array(
-					$_POST['id_paciente_editar']
+					$_POST['id_paciente_borrar']
 			);
 			
-			echo $obj->deshabilitar($datos);				
+			echo $obj->borrarPaciente($datos);				
 			}
-
-		}
-		else if (isset($_POST['nombre'])) // como no tiene ID, entra por el form de NUEVO paciente
+		else  //entra por el form NUEVO
 		{	
 			$datos=array(
 				$_POST['nombre'],

@@ -48,10 +48,14 @@
 				url:"agregarPaciente.php",
 				success:function(r){
 					if(r==1){
+						alert(r);
+						alert("1");
 						$('#frmNuevoPaciente')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente agregado!");
 					}else{
+												alert(r);
+						alert("2");
 						alert("Fallo al agregar paciente");
 					}
 				}
@@ -73,8 +77,6 @@
 				data:datos,
 				url:"agregarPaciente.php",
 				success:function(r){
-					//console.log(r);
-					alert(r);
 					if(r!=1){
 						$('#frmNuevoPaciente_editar')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
@@ -101,7 +103,7 @@
 				url:"agregarPaciente.php",
 				success:function(r){
 					if(r!=1){
-						$('#frmNuevoPaciente_editar')[0].reset();
+						$('#frmNuevoPaciente_borrar')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente eliminado");
 					}else{
@@ -109,6 +111,8 @@
 					}
 				}
 			});
+		$('#frmNuevoPaciente_borrar').modal('hide');
+		$('#tablaDataTable').reload('tbl_editarPacientes.php');
 		});
 	});
 </script>

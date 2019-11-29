@@ -70,8 +70,8 @@
 			$cnn=conectar();
 			
 			print_r($datos);
-			$sql="DELETE FROM tbl_pacientes WHERE  
-					WHERE id_paciente='$datos[4]'";
+			$sql="DELETE FROM tbl_pacientes   
+					WHERE id_paciente='$datos[0]'";
 
 			return mysqli_query($cnn,$sql);
 		}
