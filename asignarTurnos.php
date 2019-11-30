@@ -13,7 +13,7 @@
           </ol>
     		   
     		  <div class="card-body">
-    				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#agregarTurno">Nuevo Turno  <span class="fa fa-plus-circle"></span></a>
+    				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#agregarTurno" onclick="cargarDNI()">Nuevo Turno  <span class="fa fa-plus-circle"></span></a>
     			   <hr>
     		  </div>
 		  
