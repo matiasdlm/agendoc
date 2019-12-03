@@ -14,7 +14,7 @@
                 <?php } ?>
               </div>
             <div class="copyright text-center my-auto"></br>
-              <span>Desarrollado por Fantastic SOFT - 2018</span>
+              <span>Desarrollado por Fantastic SOFT - 2019</span>
             </div>
           </div>
         </footer>
