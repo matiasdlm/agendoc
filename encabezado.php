@@ -29,10 +29,6 @@ session_start();
   			<img src="img/tec.png"> AgenDoc 
   		</a>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c8b5825bb1465b828068ec39dcbee4aad1212654
       <? php if(isset($_SESSION['usuario'])){ ?>
           //<!-- Navbar Search -->
           <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
