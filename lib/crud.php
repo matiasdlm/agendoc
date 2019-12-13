@@ -75,6 +75,25 @@
 
 			return mysqli_query($cnn,$sql);
 		}
+
+
+		public function obtenerListaDniPacientes(){
+			$cnn=conectar();
+			
+			$sql="SELECT * from tbl_pacientes ORDER BY apellido";
+
+			$result = mysqli_query($cnn,$sql);
+
+			$ver=mysqli_fetch_row($result);
+
+			$datos= array(
+				'id_paciente' =>$ver[0],
+				'nombre' =>$ver[1],
+				'apellido' =>$ver[2],
+				'dni' =>$ver[3]
+				)	;
+			return $datos;
+		}
 		
 	}
 ?>

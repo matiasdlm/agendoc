@@ -20,9 +20,9 @@
 		$mensaje = "El usuario <b>$usuario</b> se registró correctamente.";
 		include_once 'index.php';
 	}
-	else{
-		$mensaje = 'Las contraseñas no coiciden.';
+	else
+	{
+		$mensaje = 'ERROR: Las contraseñas no coiciden.';
 		include_once 'usuarios_registro.php';
 	}
-	
 ?>
