@@ -22,7 +22,7 @@
 
 			if ($rol>1){
 
-				 echo "especialista";
+				 include_once 'asignarTurnos.php';
 
 			 }else{
 				//login secretaria
