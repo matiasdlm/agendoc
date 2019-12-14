@@ -94,6 +94,22 @@
 				)	;
 			return $datos;
 		}
+
+
+		// = TURNOS =
+		// ==========
+		public function agregarTurno($datos){
+
+			$cnn=conectar();
+			
+			$sql="INSERT into tbl_turnos(id_paciente,id_especialista,fecha,id_hora)
+					values ('$datos[0]',
+							'$datos[1]',
+							'$datos[2]',
+							'$datos[3]')";
+			return mysqli_query($cnn,$sql);
+		}
 		
 	}
 ?>
+

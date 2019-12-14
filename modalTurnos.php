@@ -23,7 +23,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevos Paciente</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Reserva de Turnos</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +69,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button id="btnAgregar" type="submit" class="btn btn-primary">Agregar</button>
+          <button id="btnReservar" type="submit" class="btn btn-primary">Reservar</button>
         </div>
       </form>
     </div>
@@ -86,3 +86,27 @@
 
 
 
+<!-- Submit Reservar turno -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#btnReservar').click(function(){
+      datos=$('#frmNuevoTurno').serialize();
+      
+      $.ajax({
+        type:"POST",
+        data:datos,
+        url:"agregarTurno.php",
+        success:function(r){
+          if(r==1){
+            $('#frmNuevoTurno')[0].reset();
+            $('#tablaDataTableTurnos').reload('tbl_turnos.php');
+            alert("Turno Reservado!");
+            window.location.reload();
+          }else{
+            alert("Fallo al reservar Turno");
+          }
+        }
+      });
+    });
+  });
+</script>

@@ -15,7 +15,7 @@
 		<?php } ?>
 	<?php } ?>
 	<br/>
-	<form  method="post">
+	<form method="post">
 		<label for="usuario">Usuario:</label> 
 		<input type="text" id="usuario" name="usuario"/><br/><br/>
 		<label for="password">Contraseña:</label>

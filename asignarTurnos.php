@@ -17,14 +17,34 @@
     			   <hr>
     		  </div>
 		  
-
+      <!-- DataTable -->
+         <div class="card mb-3">
+                <div class="card-body">
+                  <div id="tablaDataTableTurno" class="table-responsive">
+            
+                  </div>
+                </div>
+                
+                <div class="card-footer small text-muted">Updated <?php echo date('Y/m/d H:i'); ?></div>
+            </div>
+            
         </div>
       </div>
+
+
 
 
 <?php include_once "modalTurnos.php"?>
 <?php include_once "pie.php"?> 
 
+
+
+<!-- carga la lista de Turnos -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tablaDataTableTurno').load('tbl_turnos.php');
+  } );
+</script>
 
 
 
