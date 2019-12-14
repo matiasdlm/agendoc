@@ -9,6 +9,10 @@
   $sql = "SELECT * FROM tbl_usuarios WHERE id_rol='2' ORDER BY apellido";
       
   $lista_doctores = mysqli_query($cnn, $sql);
+
+  $sql = "SELECT * FROM tbl_horarios";
+      
+  $lista_horas = mysqli_query($cnn, $sql);
 ?>
 
 
@@ -27,6 +31,7 @@
       <form id="frmNuevoTurno" >
         <div class="modal-body">
           
+            <!-- Select Paciente -->
       			<label>Paciente</label>
               <select id="paciente">
                   <option value="0"></option>
@@ -35,6 +40,8 @@
                      } ?>
               </select> 
             <br>
+
+            <!-- Select Especialista -->
       			<label>Especialista</label>
               <select id="doctor">
                   <option value="0"></option>
@@ -43,10 +50,20 @@
                      } ?>
               </select>
             <br>
-      			<label>Telefono</label>
-            <input type="text" class="form-control input-sm" id="telefono" name="telefono" minlength="10">
-            <label>DNI</label>
-            <input type="text" class="form-control input-sm" id="dni" name="dni" minlength="7" required>
+
+            <!-- Fecha -->
+      			<label>FECHA: </label> 
+            <input type="date" name="minimoHoy" id="fecha" required>
+
+            <!-- Hora -->
+
+              <select id="hora">
+                  <option value="0"></option>
+                    <?php while($hora=mysqli_fetch_object($lista_horas)) {
+                      echo "<option value=\"$hora->id_horario\">$hora->hora</option>"; 
+                     } ?>
+              </select>
+            <br><br>
 
     		  
         </div>
@@ -61,20 +78,11 @@
 
 
 
-
-
-<script type="text/javascript">
-  function cargarDNI(){
-    $.ajax ({
-      type:"POST",
-      data: "",
-      url: "funciones/obtenerListaDniPacientes.php",
-      success:function(r){
-          datos=jQuery.parseJSON(r);
-          $('#id_paciente').val(datos['id_paciente']);
-          $('#dni').val(datos['dni']);
-      }
-    });
-  }
+<script>
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementsByName("minimoHoy")[0].setAttribute('min', today);
 </script>
+
+
+
 
