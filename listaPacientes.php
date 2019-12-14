@@ -8,24 +8,25 @@
  
       <div id="content-wrapper">
         <div class="container-fluid"> <!-- contenedor que me separa el contenido del menu -->
-		  <ol class="breadcrumb">
-            <li class="breadcrumb-item active">LISTADO DE PACIENTES</li>
-          </ol>
-		   
-		  <div class="card-body">
-				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#agregarDatosPaciente">Agregar Nuevo  <span class="fa fa-plus-circle"></span></a>
-			<hr>
-		  </div>
+			  <ol class="breadcrumb">
+	            <li class="breadcrumb-item active">LISTADO DE PACIENTES</li>
+	          </ol>
+			   
+			  <div class="card-body">
+					<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#agregarDatosPaciente">Agregar Nuevo  <span class="fa fa-plus-circle"></span></a>
+				<hr>
+			  </div>
 		  
-		  <!-- DataTable -->
-		   <div class="card mb-3">
-            <div class="card-body">
-              <div id="tablaDataTable" class="table-responsive">
-				
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated <?php echo date('Y/m/d H:i'); ?></div>
-          </div>
+			  <!-- DataTable -->
+			   <div class="card mb-3">
+		            <div class="card-body">
+		              <div id="tablaDataTable" class="table-responsive">
+						
+		              </div>
+		            </div>
+		            
+		            <div class="card-footer small text-muted">Updated <?php echo date('Y/m/d H:i'); ?></div>
+		        </div>
 
         </div>
       </div>
@@ -53,9 +54,8 @@
 						$('#frmNuevoPaciente')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente agregado!");
+						window.location.reload();
 					}else{
-												alert(r);
-						alert("2");
 						alert("Fallo al agregar paciente");
 					}
 				}
@@ -81,6 +81,7 @@
 						$('#frmNuevoPaciente_editar')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente agregado!");
+						window.location.reload();
 					}else{
 						alert("Fallo al modificar paciente");
 					}
@@ -106,6 +107,7 @@
 						$('#frmNuevoPaciente_borrar')[0].reset();
 						$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente eliminado");
+						window.location.reload();
 					}else{
 						alert("Fallo al eliminar paciente");
 					}
