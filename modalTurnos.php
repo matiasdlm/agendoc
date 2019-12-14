@@ -33,7 +33,7 @@
           
             <!-- Select Paciente -->
       			<label>Paciente</label>
-              <select id="paciente">
+              <select name="id_paciente" id="id_paciente">
                   <option value="0"></option>
                     <?php while($paciente=mysqli_fetch_object($lista_pacientes)) {
                       echo "<option value=\"$paciente->ID_paciente\">$paciente->dni - $paciente->apellido $paciente->nombre</option>"; 
@@ -43,7 +43,7 @@
 
             <!-- Select Especialista -->
       			<label>Especialista</label>
-              <select id="doctor">
+              <select name="id_especialista" id="id_especialista">
                   <option value="0"></option>
                     <?php while($especialista=mysqli_fetch_object($lista_doctores)) {
                       echo "<option value=\"$especialista->ID_usuario\">$especialista->apellido $especialista->nombre</option>"; 
@@ -53,11 +53,11 @@
 
             <!-- Fecha -->
       			<label>FECHA: </label> 
-            <input type="date" name="minimoHoy" id="fecha" required>
+            <input type="date" name="fecha" id="fecha" required>
 
             <!-- Hora -->
 
-              <select id="hora">
+              <select name="id_hora" id="id_hora">
                   <option value="0"></option>
                     <?php while($hora=mysqli_fetch_object($lista_horas)) {
                       echo "<option value=\"$hora->id_horario\">$hora->hora</option>"; 
@@ -80,7 +80,7 @@
 
 <script>
   var today = new Date().toISOString().split('T')[0];
-  document.getElementsByName("minimoHoy")[0].setAttribute('min', today);
+  document.getElementsByName("fecha")[0].setAttribute('min', today);
 </script>
 
 

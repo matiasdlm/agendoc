@@ -6,7 +6,7 @@
 	
 	if ( $_POST)
 	{
-		if ( isset($_POST['id_paciente'])) 
+		if (isset($_POST['id_paciente'])) 
 		{		
 			$datos=array(
 				$_POST['id_paciente'],
