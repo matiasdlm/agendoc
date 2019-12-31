@@ -4,8 +4,8 @@
 	  <th colspan=3; style="text-align:right"><?php $xid=$_GET['xid']; echo "<a href='altaHistoria.php?xid=$xid&xnom=$xnom'>Agregar Historia</a>"?></th>
 	</tr>
 	<tr style="background-color: #5858FA; color:white; font-weight:bold;">
-	  <th>Fecha</th>
-	  <th>Especialista</th>
+	  <th width="120">Fecha</th>
+	  <th width="180">Especialista</th>
 	  <th>Comentarios</th>
 	</tr>
   </thead>
