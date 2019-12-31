@@ -11,7 +11,7 @@
 	<h4>Ingrese usuario y contraseña</h4>
 	<?php if(isset($mensaje)){ ?>
 		<?php if($mensaje!=''){ ?>
-			<hr/> <?php echo $mensaje?> <hr/>
+			<hr> <?php echo $mensaje?> <hr/>
 		<?php } ?>
 	<?php } ?>
 	<br/>
