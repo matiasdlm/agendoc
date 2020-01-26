@@ -14,7 +14,7 @@
           
             <div class="card text-center" style="width: 15rem; background: linear-gradient(45deg,yellow,white); float: right">
               <div class="card-body">
-                <h5 class="card-title">Notas Importantes   
+                <h5 class="card-title">Notas Importantes
                   <span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalNota" style="font-size:4px;">
                   <span class="fa fa-plus-circle" style="font-size:20px;" ></span>
                   </span>
