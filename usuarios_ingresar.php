@@ -15,11 +15,17 @@
 		<?php } ?>
 	<?php } ?>
 	<br/>
-	<form method="post">
-		<label for="usuario">Usuario:</label> 
-		<input type="text" id="usuario" name="usuario"/><br/><br/>
-		<label for="password">Contraseña:</label>
-		<input type="password" id="password" name="password"/>
+	<form method="post" >
+		<table cellpadding="5">
+  			<tr>
+    			<td><label for="usuario">Usuario: </label> </td>
+				<td><input type="text" id="usuario" name="usuario"/></td> 
+			</tr>
+			<tr>
+				<td><label for="password">Contraseña: </label> </td>
+				<td><input type="password" id="password" name="password"/> </td>
+			</tr>
+		</table>
 		<br/><br/>
 		<input type="submit" value="Ingresar"/>
 	</form>
