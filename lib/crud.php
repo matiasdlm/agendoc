@@ -1,5 +1,4 @@
 <?php
-
 	class crud{
 		public function agregar($datos){
 
@@ -109,7 +108,33 @@
 							'$datos[3]')";
 			return mysqli_query($cnn,$sql);
 		}
-		
+
+
+
+		public function obtener_Hs_disponibles($dia){
+			$cnn=conectar();
+
+			$comboHs = "";
+
+			$sql="SELECT * FROM tbl_horarios
+ 					WHERE id_horario NOT IN (SELECT id_hora as id_horario 
+                       FROM tbl_turnos WHERE fecha='$dia')";
+
+			$result = mysqli_query($cnn,$sql);
+
+
+			while($hs_disp=mysqli_fetch_object($result)){
+				$result_hs[]= array(
+					'id_horario' =>$hs_disp->id_horario,
+					'hora' =>$hs_disp->hora
+					)	;
+			}
+
+
+			return $result_hs; 
+
+		}
+
 	}
 ?>
 
