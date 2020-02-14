@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('America/Araguaina');
+date_default_timezone_set('America/Argentina/Buenos_Aires');
 ob_start();
 session_start();
 ?>
@@ -63,8 +63,19 @@ session_start();
     			   <span>Pacientes</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="listaPacientes.php">Listado</a>
-            <a class="dropdown-item" href="historial.php">Historial Med.</a>
+            <a class="dropdown-item" href="listaPacientes.php">Listado Pacientes</a>
+            <a class="dropdown-item" href="historial.php">Historial Medico</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+             <span>Turnos</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="asignarTurnos.php">Asignar Turnos</a>
+            <a class="dropdown-item" href="horarios.php">Horario Atencion  </a>
           </div>
         </li>
       </ul>
