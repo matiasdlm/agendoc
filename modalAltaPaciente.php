@@ -93,7 +93,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="submit" name="borrarPaciente" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span> SÍ</button>
+                <button type="submit" id="borrarPaciente" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span> SÍ</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> NO</button>
             </div>
 

@@ -22,7 +22,7 @@
 	require_once "lib/conexion.php";
 	$cnn = conectar();
 	
-	$sql="select * from tbl_pacientes;";
+	$sql="select * from tbl_pacientes where habilitado='1';";
 	$resultado=mysqli_query($cnn,$sql);
 	
 	while($paciente=mysqli_fetch_object($resultado)){
@@ -41,7 +41,7 @@
 		  </span>
 		</td>
 	  <td style="text-align:center;">
-		 <span name="btn_borrar" id="btn_borrar" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalBorrar" onclick="eliminarPaciente('<?php echo $x_ID ?>')" style="font-size:10px;">
+		 <span name="btn_borrar" id="btn_borrar" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalBorrar" onclick="agregarFrmBorrar('<?php echo $x_ID ?>')" style="font-size:10px;">
 			<span class="fa fa-trash" style="font-size:16px;"></span>
 		  </span> 		  
 		</td>

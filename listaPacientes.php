@@ -52,7 +52,7 @@
 						alert(r);
 						alert("1");
 						$('#frmNuevoPaciente')[0].reset();
-						$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						//$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente agregado!");
 						window.location.reload();
 					}else{
@@ -79,8 +79,8 @@
 				success:function(r){
 					if(r!=1){
 						$('#frmNuevoPaciente_editar')[0].reset();
-						$('#tablaDataTable').reload('tbl_editarPacientes.php');
-						alert("Paciente agregado!");
+						//$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						alert("Datos Modificados!");
 						window.location.reload();
 					}else{
 						alert("Fallo al modificar paciente");
@@ -105,17 +105,19 @@
 				success:function(r){
 					if(r!=1){
 						$('#frmNuevoPaciente_borrar')[0].reset();
-						$('#tablaDataTable').reload('tbl_editarPacientes.php');
+						$('#frmNuevoPaciente_borrar').modal('hide');
 						alert("Paciente eliminado");
 						window.location.reload();
 					}else{
+						$('#frmNuevoPaciente_borrar').modal('hide');
 						alert("Fallo al eliminar paciente");
 					}
 				}
 			});
 		$('#frmNuevoPaciente_borrar').modal('hide');
-		$('#tablaDataTable').reload('tbl_editarPacientes.php');
+		//$('#tablaDataTable').reload('tbl_editarPacientes.php');
 		});
+
 	});
 </script>
 
@@ -148,23 +150,19 @@
 			}
 		});
 	}
-</script>
 
-<script type="text/javascript">
-	function eliminarPaciente(id_paciente){
+	function agregarFrmBorrar(id_paciente){
 		$.ajax ({
 			type:"POST",
 			data:"id_paciente=" + id_paciente,
-			url: "funciones/obtenerNombre.php",
+			url: "funciones/obtenerID.php",
 			success:function(r){
 					datos=jQuery.parseJSON(r);
 					$('#id_paciente_borrar').val(datos['id_paciente']);
-					$('#nombre_borrar').val(datos['nombre']);
-					$('#apellido_borrar').val(datos['apellido']);
-					$('#hola').val($('#nombre_borrar').val())
 			}
 		});
 	}
 </script>
+
 
 <?php include_once "pie.php"?> 
