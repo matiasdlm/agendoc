@@ -40,6 +40,7 @@
 		$x_hora=$turno->hora;
 		$x_esp=$turno->esp_ape ." ". $turno->esp_nom;
 		$x_nom=$turno->pac_ape ." ". $turno->pac_nom;
+		//$x_idturno=$turno->id_turno;
 
 	?>
 	<tr>
@@ -47,6 +48,12 @@
 	  <td><?php echo $x_hora ?></td>
 	  <td><?php echo $x_nom ?></td>
 	  <td><?php echo $x_esp ?></td>
+
+	  <!-- <td style="text-align:center;">
+		 <span name="btn_borrar" id="btn_borrar" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modalBorrar" onclick="eliminarTurno('<?php  $x_idturno ?>')" style="font-size:10px;">
+			<span class="fa fa-trash" style="font-size:16px;"></span>
+		  </span> 		  
+		</td> -->
 
 	</tr>
 	<?php } ?>

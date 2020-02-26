@@ -74,7 +74,8 @@ session_start();
              <span>Turnos</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="asignarTurnos.php">Asignar Turnos</a>
+            <a class="dropdown-item" href="asignarTurnos.php">Gestion de Turnos</a>
+            <!-- <a class="dropdown-item" href="turnosPerdidos.php">Turnos Perdidos</a> -->
             <a class="dropdown-item" href="horarios.php">Horario Atencion  </a>
           </div>
         </li>

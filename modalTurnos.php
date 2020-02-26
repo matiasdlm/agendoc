@@ -5,7 +5,7 @@
   include_once 'lib/crud.php';
   $cnn = conectar();
   
-  $sql = "SELECT * FROM tbl_pacientes ORDER BY apellido";
+  $sql = "SELECT * FROM tbl_pacientes WHERE habilitado=1 ORDER BY apellido";
       
   $lista_pacientes = mysqli_query($cnn, $sql);
 
@@ -115,16 +115,6 @@
     // Reservar Turno
     // con control de campos vacíos
     $('#btnReservar').click(function(){
-
-    /*  $pac = $('#id_paciente').val();
-
-      if ($pac != ""){
-
-        alert($pac);
-
-        $esp = $('#id_especialista').val();
-
-        if ($esp != ""){ */
 
             datos=$('#frmNuevoTurno').serialize();
             

@@ -49,6 +49,12 @@
 			return $datos;
 		}
 
+		public function obtenerID($id_paciente){
+			$datos= array('id_paciente' =>$id_paciente);
+
+			return $datos;
+		}
+
 
 		public function actualizar($datos){
 			$cnn=conectar();
@@ -69,8 +75,11 @@
 			$cnn=conectar();
 			
 			print_r($datos);
-			$sql="DELETE FROM tbl_pacientes   
-					WHERE id_paciente='$datos[0]'";
+			//$sql="DELETE FROM tbl_pacientes   
+			//		WHERE id_paciente='$datos[0]'";
+			$sql="UPDATE tbl_pacientes SET 
+									habilitado='0'
+								WHERE id_paciente='$datos[0]'";
 
 			return mysqli_query($cnn,$sql);
 		}
@@ -79,7 +88,7 @@
 		public function obtenerListaDniPacientes(){
 			$cnn=conectar();
 			
-			$sql="SELECT * from tbl_pacientes ORDER BY apellido";
+			$sql="SELECT * from tbl_pacientes WHERE habilitado=1 ORDER BY apellido";
 
 			$result = mysqli_query($cnn,$sql);
 
@@ -118,7 +127,7 @@
 
 			$sql="SELECT * FROM tbl_horarios
  					WHERE id_horario NOT IN (SELECT id_hora as id_horario 
-                       FROM tbl_turnos WHERE fecha='$dia')";
+                       FROM tbl_turnos WHERE fecha='$dia' and habilitado='true')";
 
 			$result = mysqli_query($cnn,$sql);
 
@@ -133,6 +142,85 @@
 
 			return $result_hs; 
 
+		}
+
+
+		// obtiene los datos de los turnos para cargar
+		// en el modal
+		public function obtenerTurnos($id_turno){
+			$cnn=conectar();
+			
+			$sql="SELECT * from vista_turnos
+					WHERE id_turno='$id_turno'";
+			$result = mysqli_query($cnn,$sql);
+
+			$ver=mysqli_fetch_row($result);
+
+			$datos= array(
+				'id_turno' =>$ver[4],
+				'esp_ape' =>$ver[1],
+				'esp_nom' =>$ver[0],
+				'pac_ape' =>$ver[7],
+				'pac_nom' =>$ver[5],
+				'pac_dni' =>$ver[6]
+				)	;
+			return $datos;
+		}
+
+
+		// obtiene el ID turno
+		public function obtenerIDTurno($id_turno){
+			$cnn=conectar();
+			
+			$sql="SELECT id_turno from vista_turnos
+					WHERE id_turno='$id_turno'";
+			$result = mysqli_query($cnn,$sql);
+
+			$ver=mysqli_fetch_row($result);
+
+			$datos= array(
+				'id_turno' =>$ver[0]);
+			return $datos;
+		}
+
+
+		//modifica un TURNO
+		public function actualizarTurno($datos){
+			$cnn=conectar();
+			
+			print_r($datos);
+			$sql="UPDATE tbl_turnos SET 
+						fecha='$datos[1]',
+						id_hora='$datos[2]' 
+					WHERE id_turno='$datos[0]'";
+
+			return mysqli_query($cnn,$sql);
+		}
+
+
+		//Eliminar un TURNO
+		public function cancelarTurno($datos){
+			$cnn=conectar();
+			
+			print_r($datos);
+			$sql="UPDATE tbl_turnos SET 
+						habilitado='0' 
+					WHERE id_turno='$datos[0]'";
+
+			return mysqli_query($cnn,$sql);
+		}
+
+
+		//modifica un TURNO
+		public function atenderTurno($datos){
+			$cnn=conectar();
+			
+			print_r($datos);
+			$sql="UPDATE tbl_turnos SET 
+						atendido='1' 
+					WHERE id_turno='$datos[0]'";
+
+			return mysqli_query($cnn,$sql);
 		}
 
 	}
