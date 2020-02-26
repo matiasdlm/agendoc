@@ -23,11 +23,11 @@
 <script src="vendor/chart.js/Chart.min.js"></script>
 <script src="vendor/datatables/jquery.dataTables.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-<!-- Custom scripts for all pages-->
+<!-- Custom scripts for all pages
 <script src="js/sb-admin.min.js"></script>
-<!-- Demo scripts for this page-->
+ Demo scripts for this page
 <script src="js/demo/datatables-demo.js"></script>
-<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-area-demo.js"></script> -->
 <!-- DataTable-->
 <script src="lib/dataTable/dataTables.bootstrap4.min.js"></script>
 <script src="lib/dataTable/jquery.dataTables.min.js"></script>
