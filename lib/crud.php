@@ -127,7 +127,7 @@
 
 			$sql="SELECT * FROM tbl_horarios
  					WHERE id_horario NOT IN (SELECT id_hora as id_horario 
-                       FROM tbl_turnos WHERE fecha='$dia' and habilitado='true')";
+                       FROM tbl_turnos WHERE fecha='$dia' and habilitado='1')";
 
 			$result = mysqli_query($cnn,$sql);
 
@@ -157,12 +157,12 @@
 			$ver=mysqli_fetch_row($result);
 
 			$datos= array(
-				'id_turno' =>$ver[4],
-				'esp_ape' =>$ver[1],
-				'esp_nom' =>$ver[0],
-				'pac_ape' =>$ver[7],
-				'pac_nom' =>$ver[5],
-				'pac_dni' =>$ver[6]
+				'id_turno' =>$id_turno,
+				'esp_ape' =>$ver[2],
+				'esp_nom' =>$ver[1],
+				'pac_ape' =>$ver[8],
+				'pac_nom' =>$ver[6],
+				'pac_dni' =>$ver[7]
 				)	;
 			return $datos;
 		}
@@ -211,8 +211,8 @@
 		}
 
 
-		//modifica un TURNO
-		public function atenderTurno($datos){
+		//modifica un TURNO x Atendido
+		public function recepcionarPaciente($datos){
 			$cnn=conectar();
 			
 			print_r($datos);

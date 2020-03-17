@@ -23,7 +23,7 @@
 	$cnn = conectar();
 	$hoy = date("Y-m-d"); 
 
- 	$sql= "select * from vista_turnos where fecha>='". $hoy . "';";
+ 	$sql= "select * from vista_turnos where atendido='0' and fecha>='". $hoy . "';";
 	
 	$resultado=mysqli_query($cnn,$sql);
 	

@@ -12,7 +12,10 @@
 
     <div class="container-fluid">
 
-    <?php if($_SESSION['id_rol']>1){ ?>
+    <?php if($_SESSION['id_rol']>1){ 
+
+      $id_usuario= $_SESSION['id_usuario'];
+      ?> 
 
 		  <ol class="breadcrumb">
             <li class="breadcrumb-item active">BUSCAR HISTORIA CLINICA</li>
@@ -36,7 +39,7 @@
             { ?>
     
       <ol class="breadcrumb">
-            <li class="breadcrumb-item active">==== NO POSEE ACCESO PARA CONSULTAR LAS HISTORIAS CLINICAS ====</li>
+            <li class="alert alert-danger">==== NO POSEE ACCESO PARA CONSULTAR LAS HISTORIAS CLINICAS ====</li>
           </ol>
 
           <!-- DataTable -->

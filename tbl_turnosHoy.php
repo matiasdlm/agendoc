@@ -22,16 +22,7 @@
 	
 	$hoy = date("Y-m-d"); 
 
-	/* $sql= "SELECT tbl_usuarios.nombre AS esp_nom,tbl_usuarios.apellido AS esp_ape,tbl_turnos.fecha AS fecha,tbl_turnos.habilitado AS habilitado,tbl_turnos.id_turno AS id_turno,tbl_pacientes.nombre AS pac_nom,tbl_pacientes.apellido AS pac_ape,tbl_horarios.hora AS hora 
-		FROM ((tbl_turnos join tbl_usuarios ON tbl_turnos.id_especialista = tbl_usuarios.ID_usuario) 
-			INNER JOIN tbl_pacientes ON tbl_turnos.id_paciente = tbl_pacientes.ID_paciente) 
-			INNER JOIN tbl_horarios ON tbl_turnos.id_hora = tbl_horarios.id_horario
-		WHERE ((tbl_turnos.habilitado = 1) AND (tbl_turnos.fecha='" . $hoy . "'));"; */
-
-	//echo $hoy;
-	//echo $sql;
-
- 	$sql= "select * from vista_turnos where fecha='". $hoy . "';";
+ 	$sql= "select * from vista_turnos where atendido='0' and fecha='". $hoy . "';";
 
 	$resultado=mysqli_query($cnn,$sql);
 	

@@ -8,7 +8,7 @@
 		if(isset($_POST['usuario'])){
 			$usuario = $_POST['usuario'];
 			$password = $_POST['password'];
-			// $id_rol = $_POST['id_rol'];
+			//$id_usuario = $_POST['id_usuario'];
 		}
 
 		$conexion = conectar();

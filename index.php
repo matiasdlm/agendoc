@@ -22,11 +22,11 @@
 
 			if ($rol>1){
 
-				 include_once 'turnosHoy.php';
+				 include_once 'agendaHoy.php';
 
 			 }else{
 				//login secretaria
-				include_once 'asignarTurnos.php';
+				include_once 'turnosHoy.php';
 				
 				//require_once 'inicio_secretaria.php';
 			}

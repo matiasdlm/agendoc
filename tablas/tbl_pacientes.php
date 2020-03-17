@@ -20,7 +20,7 @@
 	include_once 'lib/conexion.php';
 	$cnn = conectar();
 	
-	$sql="select * from tbl_pacientes;";
+	$sql="select * from tbl_pacientes where habilitado='1';";
 	$resultado=mysqli_query($cnn,$sql);
 	?>
 	
@@ -42,7 +42,7 @@
 		$x_telefono=$paciente->telefono;
 		?>
 	<tr>
-	  <td><?php echo "<a href='paciente.php?xid=$x_ID&xnom=$x_nom'> $x_ID </a>" ?></td>
+	  <td><?php echo "<a href='paciente.php?xesp=$id_usuario&xid=$x_ID&xnom=$x_nom'> $x_ID </a>" ?></td>
 	  <td><?php echo $x_dni ?></td>
 	  <td><?php echo $x_nom?></td>
 	  <td><?php echo $x_telefono ?></td>

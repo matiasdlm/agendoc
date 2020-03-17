@@ -9,7 +9,8 @@
           </ol>
 
           <?php $xnom=$_GET['xnom'];
-                $id_pac=$_GET['xid']; ?>
+                $id_pac=$_GET['xid'];
+                $id_usuario = $_GET['xesp']; ?>
 
           
             <div class="card text-center" style="width: 15rem; background: linear-gradient(45deg,yellow,white); float: right">

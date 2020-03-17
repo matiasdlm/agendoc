@@ -49,8 +49,6 @@
 				url:"agregarPaciente.php",
 				success:function(r){
 					if(r==1){
-						alert(r);
-						alert("1");
 						$('#frmNuevoPaciente')[0].reset();
 						//$('#tablaDataTable').reload('tbl_editarPacientes.php');
 						alert("Paciente agregado!");

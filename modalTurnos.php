@@ -1,6 +1,5 @@
 <?php
  
-
   include_once 'lib/conexion.php';
   include_once 'lib/crud.php';
   $cnn = conectar();
@@ -9,7 +8,7 @@
       
   $lista_pacientes = mysqli_query($cnn, $sql);
 
-  $sql = "SELECT * FROM tbl_usuarios WHERE id_rol='2' ORDER BY apellido";
+  $sql = "SELECT * FROM tbl_usuarios WHERE id_rol='2' ORDER BY ID_usuario";
       
   $lista_doctores = mysqli_query($cnn, $sql);
 
@@ -125,7 +124,6 @@
               success:function(r){
                 if(r==1){
                   $('#frmNuevoTurno')[0].reset();
-                  $('#tablaDataTableTurnos').reload('tbl_turnos.php');
                   alert("Turno Reservado!");
                   window.location.reload();
                 }else{

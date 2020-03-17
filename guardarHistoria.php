@@ -1,17 +1,29 @@
 <?php
-	include_once 'lib/conexion.php';
-	$cnn = conectar();
 	
+
+
 	$detalle = $_POST['detalle'];
+	$id_os = $_POST['id_ob_social'];
+	$id_espe = $_POST['idus'];
+	$id_pac = $_POST['idpac'];
 	// $xid=$_GET['xid'];
 	
-	$sql = "INSERT INTO tbl_atenciones (id_paciente, id_usuario, fecha, detalle, id_os_paciente)
-			VALUES ('1','1',NOW(), '$detalle','1')";
+
+	//include_once 'modalConsultaGuardada.php';
+	include_once 'lib/conexion.php';
+
+	$cnn=conectar();
+
+	$sql = "INSERT INTO tbl_atencion (id_paciente, id_usuario, fecha, detalle, id_os_paciente)
+			VALUES ('$id_pac','$id_espe',NOW(), '$detalle','$id_os')";
 			
 	$resultado = mysqli_query($cnn, $sql);
 	$mensaje = '';
 	if($resultado){
-		$mensaje = '<b>Sus datos se han guardado correctamente</b>';
+		//$mensaje = '<b>Sus datos se han guardado correctamente</b>';
+
+		echo "<script>alert('Historia guardada de manera correcta');</script>";
+		echo "<script>window.location.replace('historial.php');</script>";
 	}
 	else{
 		$error = mysqli_error($cnn);
@@ -19,5 +31,6 @@
 		$mensaje = "Hubo un error al guardar: $error. Error nro: $nro";
 	}
 	
-	include_once 'altaHistoria.php';
+	//include_once 'altaHistoria.php';
+	
 ?>
